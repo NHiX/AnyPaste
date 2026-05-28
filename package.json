@@ -1,6 +1,6 @@
 {
   "name": "anypaste",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "description": "Elegant, local-first clipboard manager for macOS, Windows and Linux.",

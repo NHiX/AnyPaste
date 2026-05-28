@@ -20,3 +20,13 @@ History is stored locally in the operating system user data directory. No clipbo
 ## Platforms
 
 AnyPaste is built with Tauri for macOS, Windows and Linux. Native packages are generated with `npm run tauri:build`.
+
+## macOS installation
+
+The public DMG is ad-hoc signed. Without an Apple Developer ID certificate and notarization, macOS may still ask for confirmation in System Settings > Privacy & Security on first launch.
+
+If macOS says "AnyPaste is damaged and can't be opened" with an older download, install the latest release or clear quarantine:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/AnyPaste.app
+```

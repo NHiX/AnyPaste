@@ -20,3 +20,13 @@ L’historique est stocké localement dans le dossier de données utilisateur du
 ## Plateformes
 
 AnyPaste est conçu avec Tauri pour macOS, Windows et Linux. Les paquets natifs sont générés via `npm run tauri:build`.
+
+## Installation macOS
+
+Le DMG public est signé en ad-hoc. Sans certificat Apple Developer ID et notarisation, macOS peut demander une confirmation dans Réglages Système > Confidentialité et sécurité au premier lancement.
+
+Si macOS affiche "AnyPaste est endommagé et ne peut pas être ouvert" avec un ancien téléchargement, installez la dernière release ou retirez la quarantaine :
+
+```bash
+xattr -dr com.apple.quarantine /Applications/AnyPaste.app
+```

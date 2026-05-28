@@ -50,6 +50,16 @@ npm run tauri:build
 
 The generated installers are written under `src-tauri/target/release/bundle`.
 
+## macOS install note
+
+The public DMG is ad-hoc signed because the project does not yet use an Apple Developer ID certificate and notarization. On first launch, macOS may still ask you to confirm the app in System Settings > Privacy & Security.
+
+If a previously downloaded DMG shows "AnyPaste is damaged and can't be opened", remove the old app, install the latest release, or clear quarantine manually:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/AnyPaste.app
+```
+
 ## Développement
 
 ```bash
@@ -67,6 +77,16 @@ npm run tauri:build
 ```
 
 Les installateurs générés sont disponibles dans `src-tauri/target/release/bundle`.
+
+## Note d'installation macOS
+
+Le DMG public est signé en ad-hoc, car le projet n'utilise pas encore de certificat Apple Developer ID ni de notarisation. Au premier lancement, macOS peut encore demander une confirmation dans Réglages Système > Confidentialité et sécurité.
+
+Si un ancien DMG affiche "AnyPaste est endommagé et ne peut pas être ouvert", supprimez l'ancienne app, installez la dernière release, ou retirez manuellement la quarantaine :
+
+```bash
+xattr -dr com.apple.quarantine /Applications/AnyPaste.app
+```
 
 ## Privacy
 
