@@ -31,6 +31,10 @@
   "bundle": {
     "active": true,
     "targets": "all",
+    "icon": [
+      "icons/icon.png",
+      "icons/icon.ico"
+    ],
     "category": "Productivity",
     "shortDescription": "A beautiful local clipboard manager.",
     "longDescription": "AnyPaste keeps clipboard history searchable, private and organized across macOS, Windows and Linux."

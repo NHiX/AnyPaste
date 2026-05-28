@@ -89,3 +89,20 @@ const png = Buffer.concat([
 ]);
 
 fs.writeFileSync(path.join(iconDir, "icon.png"), png);
+
+const iconDirectory = Buffer.alloc(6);
+iconDirectory.writeUInt16LE(0, 0);
+iconDirectory.writeUInt16LE(1, 2);
+iconDirectory.writeUInt16LE(1, 4);
+
+const iconEntry = Buffer.alloc(16);
+iconEntry[0] = 0;
+iconEntry[1] = 0;
+iconEntry[2] = 0;
+iconEntry[3] = 0;
+iconEntry.writeUInt16LE(1, 4);
+iconEntry.writeUInt16LE(32, 6);
+iconEntry.writeUInt32LE(png.length, 8);
+iconEntry.writeUInt32LE(iconDirectory.length + iconEntry.length, 12);
+
+fs.writeFileSync(path.join(iconDir, "icon.ico"), Buffer.concat([iconDirectory, iconEntry, png]));
